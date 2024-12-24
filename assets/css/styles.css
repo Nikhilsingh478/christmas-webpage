@@ -776,3 +776,10 @@ img {
   }
   
 }
+
+#message {
+  margin-top: 10px;
+  font-size: 14px;
+  color: green;
+  display: none;
+}

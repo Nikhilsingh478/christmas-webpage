@@ -107,3 +107,27 @@ sr.reveal(`.about__data, .celebrate__img`, {origin: 'right'})
 sr.reveal(`.about__img, .celebrate__data`, {origin: 'left'})
 sr.reveal(`.send__card`, {interval: 100})
 sr.reveal(`.footer`)
+
+
+
+
+// new script for sharing feature 
+
+document.getElementById("share-button").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent default link behavior
+    const link = "https://christmas-webpage.vercel.app/";
+
+    // Copy the link to clipboard
+    navigator.clipboard.writeText(link).then(() => {
+        // Show confirmation message
+        const message = document.getElementById("message");
+        message.style.display = "block";
+
+        // Hide the message after 3 seconds
+        setTimeout(() => {
+            message.style.display = "none";
+        }, 3000);
+    }).catch(err => {
+        console.error("Failed to copy: ", err);
+    });
+});
